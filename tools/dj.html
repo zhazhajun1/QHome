@@ -1,0 +1,97 @@
+
+<!--
+////////////////////////////////////////////////////////////////////
+//                          _ooOoo_                               //
+//                         o8888888o                              //
+//                         88" . "88                              //
+//                         (| ^_^ |)                              //
+//                         O\  =  /O                              //
+//                      ____/`---'\____                           //
+//                    .'  \\|     |//  `.                         //
+//                   /  \\|||  :  |||//  \                        //
+//                  /  _||||| -:- |||||-  \                       //
+//                  |   | \\\  -  /// |   |                       //
+//                  | \_|  ''\---/''  |   |                       //
+//                  \  .-\__  `-`  ___/-. /                       //
+//                ___`. .'  /--.--\  `. . ___                     //
+//              ."" '<  `.___\_<|>_/___.'  >'"".                  //
+//            | | :  `- \`.;`\ _ /`;.`/ - ` : | |                 //
+//            \  \ `-.   \_ __\ /__ _/   .-` /  /                 //
+//      ========`-.____`-.___\_____/___.-`____.-'========         //
+//                           `=---='                              //
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
+//             佛祖保佑       永无故障     永不修改               //
+////////////////////////////////////////////////////////////////////
+-->
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var fnTextPopup = function (arr, options) {
+            if (!arr || !arr.length) {
+                return
+            }
+            var index = 0;
+            document.documentElement.addEventListener("click", function (event) {
+                var x = event.pageX,
+                    y = event.pageY;
+                var eleText = document.createElement("span");
+                eleText.className = "text-popup";
+                this.appendChild(eleText);
+                if (arr[index]) {
+                    eleText.innerHTML = arr[index]
+                } else {
+                    index = 0;
+                    eleText.innerHTML = arr[0]
+                }
+                eleText.addEventListener("animationend", function () {
+                    eleText.parentNode.removeChild(eleText)
+                });
+                eleText.style.left = (x - eleText.clientWidth / 2) + "px";
+                eleText.style.top = (y - eleText.clientHeight) + "px";
+                index++
+            })
+        };
+        fnTextPopup(["富强", "和谐", "友善", "敬业", "文明", "民主", "自由", "平等", "公正", "法制", "爱国", "诚信"]);
+    </script>
+   <style>
+        .text-popup {
+            animation: textPopup 1s;
+            color: red;
+            font-weight: 700;
+            user-select: none;
+            white-space: nowrap;
+            position: absolute;
+            z-index: 99;
+        }
+ 
+        @keyframes textPopup {
+ 
+            0%,
+            100% {
+                opacity: 0;
+            }
+ 
+            5% {
+                opacity: 1;
+            }
+ 
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+    </style>
+</head>
+ 
+<body>
+
+</body>
+ 
+</html>
+     <!--鼠标点击效果-->
+     <!--<script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>-->
