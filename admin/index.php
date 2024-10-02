@@ -1,6 +1,6 @@
 
 <?php
-/*
+
 // 启动会话
 session_start();
 
@@ -11,7 +11,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != 1) {
     header('Location: /admin/login.php');
     exit;
 }
-*/
 // 继续执行下面的代码
 ?>
 <!DOCTYPE html>
