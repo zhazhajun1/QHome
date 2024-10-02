@@ -25,7 +25,7 @@
 -->
 <?php
 // 定义文件路径
-$filePath = __DIR__ . '/datasets/config.inc.php';
+$filePath ='../datasets/config.inc.php';
 
 // 判断是否为POST请求
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php
         // 定义文件路径
-        $filePath = __DIR__ . '/datasets/config.inc.php';
+        $filePath = '../datasets/config.inc.php';
 
         // 判断文件是否存在
         if (file_exists($filePath)) {
