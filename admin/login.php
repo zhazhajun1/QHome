@@ -4,7 +4,7 @@ session_set_cookie_params(999999999999999999);
 // 启动会话
 session_start();
 // 引入config.inc.php文件
-require_once 'datasets/config.inc.php';
+require_once '../datasets/config.inc.php';
 
 // 检查是否提交了表单
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
