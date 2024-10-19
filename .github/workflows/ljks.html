@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界首个无数据库PHP动态个人主页</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Button = ({ children, className, ...props }) => (
+            <button className={`inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 ${className}`} {...props}>
+                {children}
+            </button>
+        );
+
+        const ArrowRight = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-4 w-4">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        );
+
+        const Mountain = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+                <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+            </svg>
+        );
+
+        function LandingPage() {
+            return (
+                        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+                            <div className="container px-4 md:px-6">
+                                <div className="flex flex-col items-center space-y-4 text-center">
+                                    <div className="space-y-2">
+                                        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                                            QHome - 全网首个无数据库PHP动态个人主页
+                                        </h1>
+                                        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                            简单、快速、高效。无需数据库，即可创建动态和个性化的个人网站。
+                                        </p>
+                                    </div>
+                                    <div className="space-x-4">
+                                    
+                                        <Button  className="bg-gray-900 text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90">
+                                          <a href="404">蓝奏云（暂时维护）</a>
+                                        </Button>
+                                        <Button  className="bg-gray-900 text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90">
+                                          <a href="https://github.com/zhazhajun1/QHome">GitHub</a>
+                                        </Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+            );
+        }
+
+        ReactDOM.render(<LandingPage />, document.getElementById('root'));
+    </script>
+
+</body>
+</html>

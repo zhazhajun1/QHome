@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHome - 全网首个无数据库PHP动态个人主页</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Button = ({ children, className, ...props }) => (
+            <button className={`inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 ${className}`} {...props}>
+                {children}
+            </button>
+        );
+
+        const ArrowRight = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-4 w-4">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        );
+
+        const Mountain = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+                <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+            </svg>
+        );
+
+        function LandingPage() {
+            return (
+                <div className="flex flex-col min-h-screen">
+                    <header className="px-4 lg:px-6 h-14 flex items-center">
+                        <a href="/" className="flex items-center justify-center">
+                            <Mountain />
+                            <span className="sr-only">QHome</span>
+                        </a>
+                        <nav className="ml-auto flex gap-4 sm:gap-6">
+                            <a href="#features" className="text-sm font-medium hover:underline underline-offset-4">
+                                特点
+                            </a>
+                            <a href="#how-it-works" className="text-sm font-medium hover:underline underline-offset-4">
+                                如何使用
+                            </a>
+                            <a href="#about" className="text-sm font-medium hover:underline underline-offset-4">
+                                关于
+                            </a>
+                        </nav>
+                    </header>
+                    <main className="flex-1">
+                        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+                            <div className="container px-4 md:px-6">
+                                <div className="flex flex-col items-center space-y-4 text-center">
+                                    <div className="space-y-2">
+                                        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                                            QHome - 全网首个无数据库PHP动态个人主页
+                                        </h1>
+                                        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                            简单、快速、高效。无需数据库，即可创建动态和个性化的个人网站。
+                                        </p>
+                                    </div>
+                                    <div className="space-x-4">
+                                    
+                                        <Button  className="bg-gray-900 text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90">
+                                          <a href="ljks.html">立即开始</a>
+                                        </Button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+                            <div className="container px-4 md:px-6">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">主要特点</h2>
+                                <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-12 w-12 text-gray-900 dark:text-gray-50">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                            <path d="M3 5V19A9 3 0 0 0 21 19V5"/>
+                                            <path d="M3 12A9 3 0 0 0 21 12"/>
+                                        </svg>
+                                        <h3 className="text-xl font-bold">无数据库</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">无需复杂的数据库设置，简化部署和维护过程。</p>
+                                    </div>
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-12 w-12 text-gray-900 dark:text-gray-50">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                        </svg>
+                                        <h3 className="text-xl font-bold">快速加载</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">优化的性能确保您的个人主页快速加载，提供出色的用户体验。</p>
+                                    </div>
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-12 w-12 text-gray-900 dark:text-gray-50">
+                                            <path d="m18 16 4-4-4-4"/>
+                                            <path d="m6 8-4 4 4 4"/>
+                                            <path d="m14.5 4-5 16"/>
+                                        </svg>
+                                        <h3 className="text-xl font-bold">易于定制</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">简单的PHP代码结构，让您轻松定制和扩展您的个人主页。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
+                            <div className="container px-4 md:px-6">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">如何使用</h2>
+                                <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                                            <span className="text-3xl font-bold">1</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold">下载项目</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">从我的GitHub仓库/蓝奏云 克隆或下载项目压缩包。</p>
+                                    </div>
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                                            <span className="text-3xl font-bold">2</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold">配置设置</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">将文件上传到您的web服务器，根据您的需求编辑配置文件。</p>
+                                    </div>
+                                    <div className="flex flex-col items-center space-y-4 text-center">
+                                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                                            <span className="text-3xl font-bold">3</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold">部署上线</h3>
+                                        <p className="text-gray-500 dark:text-gray-400">自定义您的个人信息，您的个人主页就准备就绪了！</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+                            <div className="container px-4 md:px-6">
+                                <div className="grid gap-10 sm:grid-cols-2">
+                                    <div className="flex flex-col justify-center space-y-4">
+                                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">关于作者</h2>
+                                        <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                                            作为一名热衷于简化PHP开发的学生，我创建了这个项目来帮助其他人快速建立他们的在线形象。我相信技术应该使事情变得更简单，而不是更复杂。
+                                        </p>
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <img
+                                            alt="Author"
+                                            className="aspect-[1/1] overflow-hidden rounded-full object-cover object-center"
+                                            height="400"
+                                            src="/placeholder.svg"
+                                            width="400"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="w-full py-12 md:py-24 lg:py-32">
+                            <div className="container px-4 md:px-6">
+                                <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                                    <div className="space-y-2">
+                                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">准备好开始了吗？</h2>
+                                        <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                                            加入我们，创建您的无数据库PHP动态个人主页。简单、快速、高效。
+                                        </p>
+                                    </div>
+                                    <Button className="bg-gray-900 text-gray-50 hover:bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90">
+                                        <a href="ljks.html" >立即开始 </a>
+                                    </Button>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+                        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 清秋-QHome. All rights reserved.</p>
+                        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+                            <a className="text-xs hover:underline underline-offset-4" href="https://qm.qq.com/q/1Ro4FCHIdi">
+                                联系我
+                            </a>
+                            <a className="text-xs hover:underline underline-offset-4" href="https://qm.qq.com/q/jrIUj8DqwM">
+                               加入Q群
+                            </a>
+                        </nav>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<LandingPage />, document.getElementById('root'));
+    </script>
+
+</body>
+</html>
